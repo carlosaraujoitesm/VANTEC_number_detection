@@ -29,7 +29,9 @@ def search_number(image):
     #cv2.waitKey()
     
     contours=cv2.findContours(canny,cv2.RETR_TREE ,cv2.CHAIN_APPROX_SIMPLE)
+    print(contours)
     print(len(contours[1]))
+	
 
     if len(contours[1])>1:
         for contorno in contours[1]:
@@ -54,7 +56,7 @@ def search_number(image):
 
 
 def main():
-    img = cv2.imread('test.jpg')
+    img = cv2.imread('example.jpg')
     search_number(img)
 
 if __name__ == '__main__':
